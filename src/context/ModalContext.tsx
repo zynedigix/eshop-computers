@@ -1,6 +1,7 @@
 // src/context/ModalContext.tsx
-import React, { createContext, useContext, useState, ReactNode } from 'react';
-import { ProductCategory } from '../data/premiumProducts';
+import { createContext, useContext, useState } from 'react';
+import type { ReactNode } from 'react';
+import type { ProductCategory } from '../data/premiumProducts';
 
 interface ModalContextProps {
   isOpen: boolean;
@@ -15,10 +16,9 @@ export const ModalProvider = ({ children }: { children: ReactNode }) => {
   const [isOpen, setIsOpen] = useState(false);
   const [product, setProduct] = useState<ProductCategory | null>(null);
 
-  const openModal = (id: string) => {
+  const openModal = async (id: string) => {
     // import data lazily to avoid circular deps
-    // eslint-disable-next-line @typescript-eslint/no-var-requires
-    const { premiumProducts } = require('../data/premiumProducts');
+    const { premiumProducts } = await import('../data/premiumProducts');
     const found = premiumProducts.find((p: ProductCategory) => p.id === id) || null;
     setProduct(found);
     setIsOpen(true);

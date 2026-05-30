@@ -236,7 +236,7 @@ const CustomPCIllustration = ({ accent = '#00D6FF' }: { accent?: string }) => (
     <text x="125" y="89" textAnchor="middle" fill={accent} fontSize="7" fontFamily="monospace" opacity="0.8">CPU</text>
     {/* RAM sticks */}
     {[0,1].map(i => (
-      <rect key={i} x={155 + i*20} y="60" width="14" height="50" rx="2" key={i}
+      <rect key={i} x={155 + i*20} y="60" width="14" height="50" rx="2"
         fill="#1a1a40" stroke={accent} strokeWidth="0.6" strokeOpacity="0.7"/>
     ))}
     {[0,1].map(i => (

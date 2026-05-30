@@ -1,11 +1,12 @@
 import { useEffect, useRef } from 'react'
+import type { ReactNode } from 'react'
 import gsap from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
 
 gsap.registerPlugin(ScrollTrigger)
 
 // ── Brand SVG logos ────────────────────────────────────────────────────────────
-const BrandLogos: Record<string, JSX.Element> = {
+const BrandLogos: Record<string, ReactNode> = {
 
   HP: (
     <svg width="32" height="32" viewBox="0 0 32 32" fill="none" >
