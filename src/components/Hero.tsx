@@ -66,7 +66,7 @@ const Hero = ({ onReady }: HeroProps) => {
     for (let i = 1; i <= totalFrames; i++) {
       const img = new Image()
       const frameNumber = i.toString().padStart(3, '0')
-      img.src = new URL(`../assets/images/hero/${frameNumber}.jpg`, import.meta.url).href
+      img.src = `/images/hero/${frameNumber}.jpg`
       loadedImages.push(img)
     }
 
@@ -108,7 +108,7 @@ const Hero = ({ onReady }: HeroProps) => {
       drawFrame(0)
     }
 
-      const handleResize = () => {
+    const handleResize = () => {
       const dpr = window.devicePixelRatio || 1
       canvas.width = window.innerWidth * dpr
       canvas.height = window.innerHeight * dpr

@@ -119,7 +119,7 @@ const About = () => {
 
               {/* Owner Image */}
               <img
-                src="/src/assets/images/about-us/subramani.webp"
+                src="/images/about-us/subramani.webp"
                 alt="Subramani - E-Shop Computers"
                 className="w-full h-full object-cover object-top transition-transform duration-700 group-hover:scale-105"
               />
